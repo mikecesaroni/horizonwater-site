@@ -167,6 +167,11 @@
   .leadform input:focus,.leadform select:focus,.leadform textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,111,184,.15)}
   .leadform .btn{width:100%;text-align:center;margin-top:20px;border:0;cursor:pointer}
   .leadform .disc{text-align:center;color:var(--gray);font-size:.8rem;margin-top:12px}
+  .form-msg{display:none;text-align:center;font-weight:700;font-size:.92rem;margin-top:14px;padding:10px 14px;border-radius:8px}
+  .form-msg.show{display:block}
+  .form-msg.ok{background:#eaf7e9;color:var(--green)}
+  .form-msg.err{background:#fdeceb;color:#c0392b}
+  .leadform.submitting .btn{opacity:.7;pointer-events:none}
   .hp{position:absolute;left:-9999px}
   @media(max-width:880px){.leadwrap{grid-template-columns:1fr;gap:28px}}
 
@@ -463,7 +468,7 @@
         </ul>
       </div>
 
-      <form class="leadform" name="water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="leadform" id="water-test-form" name="water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="water-test" />
         <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
         <h3>Book Your Free Water Test</h3>
@@ -499,6 +504,7 @@
 
         <button type="submit" class="btn">Book My Free Water Test</button>
         <p class="disc">Or call/text <strong>(401) 999-8222</strong></p>
+        <p class="form-msg" id="water-test-msg" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -534,5 +540,72 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/MAkI6WIFil1zsM8O7t0Y/webhook-trigger/6c74257c-d84a-4d72-9dbe-711e4d085ea0";
+  var form = document.getElementById("water-test-form");
+  var msg = document.getElementById("water-test-msg");
+  if (!form) return;
+
+  function showMsg(text, isError){
+    msg.textContent = text;
+    msg.className = "form-msg show " + (isError ? "err" : "ok");
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (form.classList.contains("submitting")) return;
+    form.classList.add("submitting");
+
+    var data = new FormData(form);
+    var fullName = (data.get("name") || "").trim();
+    var spaceIdx = fullName.indexOf(" ");
+    var firstName = spaceIdx === -1 ? fullName : fullName.slice(0, spaceIdx);
+    var lastName = spaceIdx === -1 ? "" : fullName.slice(spaceIdx + 1);
+
+    var ghlParams = new URLSearchParams();
+    ghlParams.set("first_name", firstName);
+    ghlParams.set("last_name", lastName);
+    ghlParams.set("full_name", fullName);
+    ghlParams.set("phone", data.get("phone") || "");
+    ghlParams.set("email", data.get("email") || "");
+    ghlParams.set("address", data.get("address") || "");
+    ghlParams.set("concern", data.get("concern") || "");
+    ghlParams.set("water_source", data.get("source") || "");
+    ghlParams.set("lead_source", "Horizon Water Co Website");
+    ghlParams.set("page_url", window.location.href);
+
+    // Fire-and-forget to GoHighLevel. Cross-origin + no-cors means we can't
+    // read the response, so success/failure feedback below is driven by the
+    // Netlify Forms submission instead.
+    fetch(GHL_WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: ghlParams.toString()
+    }).catch(function(){});
+
+    var netlifyBody = new URLSearchParams();
+    data.forEach(function(value, key){ netlifyBody.set(key, value); });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: netlifyBody.toString()
+    }).then(function(res){
+      form.classList.remove("submitting");
+      if (res.ok) {
+        showMsg("Thanks! We got your request and will call to confirm your appointment.", false);
+        form.reset();
+      } else {
+        showMsg("Something went wrong. Please call/text (401) 999-8222 to book instead.", true);
+      }
+    }).catch(function(){
+      form.classList.remove("submitting");
+      showMsg("Something went wrong. Please call/text (401) 999-8222 to book instead.", true);
+    });
+  });
+})();
+</script>
 </body>
 </html>
