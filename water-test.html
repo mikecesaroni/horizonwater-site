@@ -154,6 +154,10 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     var firstName = spaceIdx === -1 ? fullName : fullName.slice(0, spaceIdx);
     var lastName = spaceIdx === -1 ? "" : fullName.slice(spaceIdx + 1);
 
+    var leadEventId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : "lead-" + Date.now() + "-" + Math.random().toString(36).slice(2);
+
     var ghlParams = new URLSearchParams();
     ghlParams.set("first_name", firstName);
     ghlParams.set("last_name", lastName);
@@ -165,6 +169,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     ghlParams.set("water_source", data.get("source") || "");
     ghlParams.set("lead_source", "Meta Ads Landing Page");
     ghlParams.set("page_url", window.location.href);
+    ghlParams.set("fb_event_id", leadEventId);
 
     fetch(GHL_WEBHOOK_URL, {
       method: "POST",
@@ -185,7 +190,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
       if (res.ok) {
         showMsg("Thanks! We got your request and will call to confirm your appointment.", false);
         form.reset();
-        if (typeof fbq === "function") fbq("track", "Lead");
+        if (typeof fbq === "function") fbq("track", "Lead", {}, { eventID: leadEventId });
       } else {
         showMsg("Something went wrong. Please call/text (401) 999-8222 to book instead.", true);
       }
