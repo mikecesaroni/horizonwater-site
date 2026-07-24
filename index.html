@@ -86,7 +86,6 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
   /* Hero */
   .hero{background:var(--white);color:var(--ink);position:relative;overflow:hidden}
-  .hero:before{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(42,111,196,.07)}
   .hero .wrap{position:relative;display:grid;grid-template-columns:.92fr 1.3fr;gap:40px;align-items:start;padding-top:10px;padding-bottom:64px}
   .hero h1{color:var(--navy);font-size:3.1rem;margin-bottom:14px}
   .hero p.lead{font-size:1.25rem;color:var(--blue);margin-bottom:10px}
@@ -228,6 +227,21 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .leadform.submitting .btn{opacity:.7;pointer-events:none}
   .hp{position:absolute;left:-9999px}
   @media(max-width:880px){.leadwrap{grid-template-columns:1fr;gap:28px}}
+
+  /* Lead card (CTA strip trigger) */
+  .leadcard{background:#fff;border-radius:var(--radius-lg);padding:30px;box-shadow:0 20px 50px rgba(0,0,0,.22);text-align:center}
+  .leadcard h3{color:var(--navy);font-size:1.4rem;margin-bottom:8px}
+  .leadcard .small{color:var(--gray);font-size:.92rem;margin-bottom:20px}
+  .leadcard .btn{width:100%;text-align:center;display:block;border:0;cursor:pointer}
+  .leadcard .disc{color:var(--gray);font-size:.8rem;margin-top:14px}
+
+  /* Lead form modal */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(11,37,69,.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:200;overflow-y:auto}
+  .modal-backdrop.show{display:flex}
+  .leadform.modal-form{position:relative;max-width:460px;width:100%;margin:auto}
+  .modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--ice);border:1px solid var(--line);color:var(--navy);font-size:1.3rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  .modal-close:hover{background:var(--line)}
+  body.modal-open{overflow:hidden}
 
   /* Footer */
   footer{background:var(--navy);color:#aac4dc;padding:54px 0 26px;font-size:.95rem}
@@ -547,7 +561,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- CTA / LEAD FORM -->
+<!-- CTA -->
 <section class="ctastrip" id="test">
   <div class="wrap">
     <div class="leadwrap">
@@ -562,47 +576,58 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
         </ul>
       </div>
 
-      <form class="leadform" id="water-test-form" name="water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="water-test" />
-        <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <div class="leadcard">
         <h3>Book Your Free Water Test</h3>
-        <p class="small">We'll call to confirm your time. Usually same week.</p>
-
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="First and last name" required />
-
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" placeholder="(401) 555-1234" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@email.com" />
-
-        <label for="address">Home address (town)</label>
-        <input id="address" name="address" type="text" placeholder="Street, Town, RI" required />
-
-        <label for="concern">What's your main water concern?</label>
-        <select id="concern" name="concern">
-          <option>Hard water (scale, dry skin, spots)</option>
-          <option>PFAS / contaminants</option>
-          <option>Bad taste or smell</option>
-          <option>Well water (iron, arsenic, etc.)</option>
-          <option>Not sure — just want it tested</option>
-        </select>
-
-        <label for="source">City or private well?</label>
-        <select id="source" name="source">
-          <option>City / public water</option>
-          <option>Private well</option>
-          <option>Not sure</option>
-        </select>
-
-        <button type="submit" class="btn">Book My Free Water Test</button>
+        <p class="small">Takes less than a minute. We'll call to confirm your time — usually same week.</p>
+        <a class="btn" href="#test">Book My Free Water Test</a>
         <p class="disc">Or call/text <strong>(401) 999-8222</strong></p>
-        <p class="form-msg" id="water-test-msg" role="status" aria-live="polite"></p>
-      </form>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- LEAD FORM MODAL -->
+<div class="modal-backdrop" id="testModalBackdrop">
+  <form class="leadform modal-form" id="water-test-form" name="water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <button type="button" class="modal-close" id="testModalClose" aria-label="Close">&times;</button>
+    <input type="hidden" name="form-name" value="water-test" />
+    <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+    <h3>Book Your Free Water Test</h3>
+    <p class="small">We'll call to confirm your time. Usually same week.</p>
+
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="First and last name" required />
+
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="(401) 555-1234" required />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@email.com" />
+
+    <label for="address">Home address (town)</label>
+    <input id="address" name="address" type="text" placeholder="Street, Town, RI" required />
+
+    <label for="concern">What's your main water concern?</label>
+    <select id="concern" name="concern">
+      <option>Hard water (scale, dry skin, spots)</option>
+      <option>PFAS / contaminants</option>
+      <option>Bad taste or smell</option>
+      <option>Well water (iron, arsenic, etc.)</option>
+      <option>Not sure — just want it tested</option>
+    </select>
+
+    <label for="source">City or private well?</label>
+    <select id="source" name="source">
+      <option>City / public water</option>
+      <option>Private well</option>
+      <option>Not sure</option>
+    </select>
+
+    <button type="submit" class="btn">Book My Free Water Test</button>
+    <p class="disc">Or call/text <strong>(401) 999-8222</strong></p>
+    <p class="form-msg" id="water-test-msg" role="status" aria-live="polite"></p>
+  </form>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -699,6 +724,35 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
       form.classList.remove("submitting");
       showMsg("Something went wrong. Please call/text (401) 999-8222 to book instead.", true);
     });
+  });
+})();
+
+(function(){
+  var backdrop = document.getElementById("testModalBackdrop");
+  if (!backdrop) return;
+  var closeBtn = document.getElementById("testModalClose");
+
+  function openModal(){
+    backdrop.classList.add("show");
+    document.body.classList.add("modal-open");
+  }
+  function closeModal(){
+    backdrop.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.querySelectorAll('a[href="#test"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      openModal();
+    });
+  });
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", function(e){
+    if (e.target === backdrop) closeModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && backdrop.classList.contains("show")) closeModal();
   });
 })();
 </script>
