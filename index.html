@@ -160,10 +160,26 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .band h2{color:#fff}
   .band .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
   .band .b{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-md);padding:26px}
+  .band .b .icon{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .band .b .icon svg{width:24px;height:24px;stroke:var(--sky);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .band .b .num{font-size:2.2rem;color:var(--gold);font-weight:900}
   .band .b h3{color:#fff;font-size:1.15rem;margin:6px 0}
   .band .b p{color:#cfe0f0;font-size:.96rem}
   @media(max-width:880px){.band .grid{grid-template-columns:1fr}}
+
+  /* Product breakout sections */
+  .breakout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:56px}
+  .breakout.reverse .imgcol{order:2}
+  .breakout.reverse .txtcol{order:1}
+  .breakout img{width:100%;border-radius:var(--radius-md);box-shadow:0 20px 44px rgba(11,37,69,.16);display:block}
+  .breakout .tag{display:inline-block;background:var(--ice);color:var(--blue);font-weight:700;font-size:.78rem;padding:4px 10px;border-radius:20px;margin-bottom:12px}
+  .breakout h3{font-size:1.7rem;margin-bottom:10px}
+  .checklist{list-style:none;margin:16px 0 24px}
+  .checklist li{padding:8px 0 8px 30px;position:relative;color:var(--ink);font-weight:500}
+  .checklist li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
+  .breakout-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .breakout-btns .btn-outline{display:inline-block;width:auto;padding:13px 22px}
+  @media(max-width:880px){.breakout{grid-template-columns:1fr;gap:20px;margin-top:36px}.breakout.reverse .imgcol,.breakout.reverse .txtcol{order:initial}}
 
   /* Steps */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
@@ -314,61 +330,70 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
 <!-- SYSTEMS -->
 <section id="systems">
-  <div class="wrap center">
-    <div class="eyebrow">Our Systems</div>
-    <h2>One Test. The Right Fix.</h2>
-    <p class="sub">We don't guess. We test your water, then match the system to what's actually in it.</p>
-    <div class="cards">
-
-      <div class="pcard">
-        <img class="pcard-img" src="images/softener.png" alt="Whole-home water softener system installed in a utility room" />
-        <div class="body">
-          <span class="tag">Most Popular</span>
-          <h3>Whole-Home Water Softener</h3>
-          <p class="sub">Ends hard water at the source — protects every faucet, appliance, and pipe in the house.</p>
-          <ul>
-            <li>Softer skin and hair</li>
-            <li>No more scale or spotty dishes</li>
-            <li>Appliances last years longer</li>
-            <li>Less soap, less detergent</li>
-          </ul>
-          <a class="btn btn-blue" href="#test">Get a Quote</a>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <img class="pcard-img" src="images/ro.png" alt="Under-sink reverse osmosis drinking water system" />
-        <div class="body">
-          <span class="tag">Best Drinking Water</span>
-          <h3>Reverse Osmosis Drinking System</h3>
-          <p class="sub">Bottled-quality water straight from your tap, for drinking and cooking.</p>
-          <ul>
-            <li>Removes dissolved solids &amp; bad taste</li>
-            <li>Cuts nitrates, arsenic, and more</li>
-            <li>Great for coffee, ice, and cooking</li>
-            <li>Installed under your sink</li>
-          </ul>
-          <a class="btn btn-blue" href="#test">Get a Quote</a>
-        </div>
-      </div>
-
-      <div class="pcard">
-        <img class="pcard-img" src="images/wholehome.png" alt="Whole-home carbon and PFAS filtration tank system" />
-        <div class="body">
-          <span class="tag">RI Priority</span>
-          <h3>Whole-Home PFAS &amp; Carbon Filtration</h3>
-          <p class="sub">Targets the contaminants Rhode Island just set new limits on. Peace of mind for the whole family.</p>
-          <ul>
-            <li>Reduces PFAS &amp; chlorine</li>
-            <li>Removes iron, sediment, odors</li>
-            <li>NSF-rated filtration media</li>
-            <li>Ideal for private wells</li>
-          </ul>
-          <a class="btn btn-blue" href="#test">Get a Quote</a>
-        </div>
-      </div>
-
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">Our Systems</div>
+      <h2>One Test. The Right Fix.</h2>
+      <p class="sub">We don't guess. We test your water, then match the system to what's actually in it.</p>
     </div>
+
+    <div class="breakout">
+      <div class="imgcol"><img src="images/softener.png" alt="Whole-home water softener system installed in a utility room" /></div>
+      <div class="txtcol">
+        <span class="tag">Most Popular</span>
+        <h3>Whole-Home Water Softener</h3>
+        <p class="sub">Ends hard water at the source — protects every faucet, appliance, and pipe in the house.</p>
+        <ul class="checklist">
+          <li>Softer skin and hair</li>
+          <li>No more scale or spotty dishes</li>
+          <li>Appliances last years longer</li>
+          <li>Less soap, less detergent</li>
+        </ul>
+        <div class="breakout-btns">
+          <a class="btn btn-blue" href="#test">Get a Quote</a>
+          <a class="btn-outline" href="tel:+14019998222">Call (401) 999-8222</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="breakout reverse">
+      <div class="imgcol"><img src="images/ro.png" alt="Under-sink reverse osmosis drinking water system" /></div>
+      <div class="txtcol">
+        <span class="tag">Best Drinking Water</span>
+        <h3>Reverse Osmosis Drinking System</h3>
+        <p class="sub">Bottled-quality water straight from your tap, for drinking and cooking.</p>
+        <ul class="checklist">
+          <li>Removes dissolved solids &amp; bad taste</li>
+          <li>Cuts nitrates, arsenic, and more</li>
+          <li>Great for coffee, ice, and cooking</li>
+          <li>Installed under your sink</li>
+        </ul>
+        <div class="breakout-btns">
+          <a class="btn btn-blue" href="#test">Get a Quote</a>
+          <a class="btn-outline" href="tel:+14019998222">Call (401) 999-8222</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="breakout">
+      <div class="imgcol"><img src="images/wholehome.png" alt="Whole-home carbon and PFAS filtration tank system" /></div>
+      <div class="txtcol">
+        <span class="tag">RI Priority</span>
+        <h3>Whole-Home PFAS &amp; Carbon Filtration</h3>
+        <p class="sub">Targets the contaminants Rhode Island just set new limits on. Peace of mind for the whole family.</p>
+        <ul class="checklist">
+          <li>Reduces PFAS &amp; chlorine</li>
+          <li>Removes iron, sediment, odors</li>
+          <li>NSF-rated filtration media</li>
+          <li>Ideal for private wells</li>
+        </ul>
+        <div class="breakout-btns">
+          <a class="btn btn-blue" href="#test">Get a Quote</a>
+          <a class="btn-outline" href="tel:+14019998222">Call (401) 999-8222</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -464,16 +489,19 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     <p class="sub" style="color:#cfe0f0">We'd rather show you the truth about your water than sell you something you don't need.</p>
     <div class="grid">
       <div class="b">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg></div>
         <div class="num">156</div>
         <h3>Days, Money Back</h3>
         <p>Not happy? We remove the system, restore your plumbing, and refund every dollar. The risk is ours.</p>
       </div>
       <div class="b">
-        <div class="num">∞</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="num">&infin;</div>
         <h3>Lifetime Warranty</h3>
         <p>Your system is covered for life. Clean water shouldn't come with an expiration date.</p>
       </div>
       <div class="b">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
         <div class="num">RI</div>
         <h3>Local &amp; Licensed</h3>
         <p>Rhode Island owned. Installed by licensed pros who know our water and stand behind the work.</p>
