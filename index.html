@@ -46,7 +46,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .center{text-align:center}
   .btn{display:inline-block;background:var(--green);color:#fff;font-weight:800;padding:15px 28px;border-radius:14px;font-size:1.05rem;transition:transform .12s ease,box-shadow .12s ease;box-shadow:0 6px 16px rgba(58,169,53,.35)}
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(58,169,53,.5)}
-  .btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7);box-shadow:none}
+  .btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.7);box-shadow:none;border-radius:999px}
   .btn-blue{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(29,111,184,.35)}
   section{padding:70px 0}
 
@@ -99,15 +99,22 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .hero .card ul{list-style:none}
   .hero .card li{padding:8px 0 8px 30px;position:relative;color:#eaf4fb}
   .hero .card li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
-  @media(max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-top:44px}.hero h1{font-size:2.3rem}}
+  .hero .imgwrap{position:relative}
+  .hero .seal{position:absolute;top:-18px;right:-14px;width:120px;height:120px;border-radius:50%;background:var(--green);color:#fff;border:4px solid #fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-head);font-weight:800;font-size:.82rem;line-height:1.35;box-shadow:0 14px 30px rgba(58,169,53,.4)}
+  .stackbtns{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .btn-outline{display:block;text-align:center;background:#fff;color:var(--navy);font-weight:800;padding:13px 22px;border-radius:999px;border:2px solid var(--line);font-size:.95rem;transition:border-color .12s,box-shadow .12s,transform .12s}
+  .btn-outline:hover{border-color:var(--navy);box-shadow:0 8px 18px rgba(11,37,69,.12);transform:translateY(-1px)}
+  @media(max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-top:44px}.hero h1{font-size:2.3rem}.hero .seal{width:96px;height:96px;font-size:.72rem;top:-12px;right:-8px}}
 
   /* Trust bar */
   .trust{background:var(--ice);padding:30px 0}
-  .trust .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
-  .trust .item{padding:8px}
-  .trust .item b{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--navy);font-size:1.05rem}
-  .trust .item b:before{content:"✓";flex:none;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.7rem;font-weight:900;box-shadow:0 4px 10px rgba(58,169,53,.35)}
-  .trust .item span{color:var(--gray);font-size:.92rem}
+  .trust .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:left}
+  .trust .item{display:flex;align-items:center;gap:14px;padding:8px}
+  .trust .icon-badge{flex:none;width:54px;height:54px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(42,111,196,.18)}
+  .trust .icon-badge svg{width:26px;height:26px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .trust .item b{display:block;color:var(--navy);font-size:1.02rem}
+  .trust .item span{display:block;color:var(--gray);font-size:.88rem;margin-top:2px}
+  @media(max-width:880px){.trust .grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:880px){.trust .grid{grid-template-columns:repeat(2,1fr)}}
 
   /* Sections */
@@ -131,6 +138,9 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
   /* Pricing / packages */
   #pricing{background:var(--ice)}
+  .pricingintro{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center;margin-bottom:44px;text-align:left}
+  .pricing-img{width:100%;border-radius:var(--radius-md);box-shadow:0 22px 50px rgba(11,37,69,.16);background:#fff;padding:24px}
+  @media(max-width:880px){.pricingintro{grid-template-columns:1fr;text-align:center}}
   .pkg{position:relative}
   .pkg.featured{border:2px solid var(--blue);box-shadow:0 18px 40px rgba(11,37,69,.16)}
   .pkg .ribbon{position:absolute;top:14px;right:-2px;background:var(--blue);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.05em;padding:6px 14px;border-radius:20px 0 0 20px;text-transform:uppercase}
@@ -206,6 +216,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   footer a{display:block;color:#aac4dc;padding:4px 0}
   footer a:hover{color:#fff}
   footer .logo{color:#fff;margin-bottom:12px}
+  .footer-map{width:100%;height:220px;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-md);margin-top:18px;filter:saturate(.9)}
   .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:18px;text-align:center;color:#7f9bb5;font-size:.86rem}
   @media(max-width:880px){footer .grid{grid-template-columns:1fr}}
 </style>
@@ -255,7 +266,10 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
       </div>
     </div>
     <div>
-      <img class="hero-img" src="images/hero-water.png" alt="Clean filtered water filling a glass at a kitchen faucet" />
+      <div class="imgwrap">
+        <img class="hero-img" src="images/hero-water.png" alt="Clean filtered water filling a glass at a kitchen faucet" />
+        <div class="seal">Local.<br>Licensed.<br>Trusted.</div>
+      </div>
       <div class="card" style="margin-top:18px">
         <h3>What you get with Horizon</h3>
         <ul>
@@ -266,6 +280,10 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
           <li>Salt &amp; filters handled for you</li>
         </ul>
       </div>
+      <div class="stackbtns">
+        <a class="btn-outline" href="tel:+14019998222">Call or Text (401) 999-8222</a>
+        <a class="btn-outline" href="#faq">Common Questions, Answered</a>
+      </div>
     </div>
   </div>
 </section>
@@ -274,10 +292,22 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 <div class="trust">
   <div class="wrap">
     <div class="grid">
-      <div class="item"><b>Lifetime Warranty</b><span>Clean water for life, guaranteed</span></div>
-      <div class="item"><b>156-Day Guarantee</b><span>Love it or we remove it &amp; refund you</span></div>
-      <div class="item"><b>Local &amp; Licensed</b><span>Rhode Island based, pro installed</span></div>
-      <div class="item"><b>PFAS Specialists</b><span>Certified contaminant removal</span></div>
+      <div class="item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><b>Lifetime Warranty</b><span>Clean water for life, guaranteed</span></div>
+      </div>
+      <div class="item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg></div>
+        <div><b>156-Day Guarantee</b><span>Love it or we remove it &amp; refund you</span></div>
+      </div>
+      <div class="item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <div><b>Local &amp; Licensed</b><span>Rhode Island based, pro installed</span></div>
+      </div>
+      <div class="item">
+        <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M9 3h6v6l5 8a2 2 0 01-1.7 3H5.7A2 2 0 014 17l5-8V3z"/><path d="M9 9h6"/></svg></div>
+        <div><b>PFAS Specialists</b><span>Certified contaminant removal</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -344,11 +374,17 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
 <!-- PRICING / PACKAGES -->
 <section id="pricing">
-  <div class="wrap center">
-    <div class="eyebrow">Straightforward Pricing</div>
-    <h2>Real Prices. No High-Pressure Quotes.</h2>
-    <p class="sub">Most water companies hide their prices until they're in your living room. We don't. Pick the package that fits — your free test confirms it. Financing available on every system.</p>
+  <div class="wrap">
+    <div class="pricingintro">
+      <img class="pricing-img" src="images/branded-system.png" alt="Horizon Water Co branded whole-home filtration system and under-sink drinking water unit" />
+      <div>
+        <div class="eyebrow">Straightforward Pricing</div>
+        <h2>Real Prices. No High-Pressure Quotes.</h2>
+        <p class="sub">Most water companies hide their prices until they're in your living room. We don't. Pick the package that fits — your free test confirms it. Financing available on every system.</p>
+      </div>
+    </div>
 
+    <div class="center">
     <div class="cards">
 
       <div class="pcard pkg">
@@ -416,6 +452,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     </div>
 
     <p class="pricenote">Every system comes with our full offer — nothing held back. Ongoing salt delivery, filter swaps, and annual service available through our membership so your water stays perfect and you never think about it. Final price confirmed at your free in-home test.</p>
+    </div>
   </div>
 </section>
 
@@ -543,6 +580,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
           <span class="row"><span class="h">HORIZON</span><span class="w">WATER CO.</span><span class="drop"></span></span>
         </div>
         <p>Rhode Island's local water treatment experts. We test it, fix it, and stand behind it — honestly. Clean, safe water in every room of your home.</p>
+        <iframe class="footer-map" src="https://maps.google.com/maps?q=Rhode%20Island&z=8&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of our Rhode Island service area"></iframe>
       </div>
       <div>
         <h4>Company</h4>
