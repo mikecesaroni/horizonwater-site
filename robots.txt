@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /water-test.html
+
+Sitemap: https://horizonwaterco.com/sitemap.xml
