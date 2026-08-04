@@ -175,6 +175,10 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .brand .drop{width:13px;height:13px;background:var(--sky);border-radius:0 50% 50% 50%;transform:rotate(45deg);display:inline-block;margin-left:1px}
   .brand .dba{font-size:.6rem;font-weight:800;letter-spacing:.13em;color:#9fb4d4}
   .brand .dba b{color:var(--green-bright);font-weight:800}
+  header .brand{background:#fff;padding:8px 14px;border-radius:10px}
+  .brand-logo-img{display:block;height:34px;width:auto}
+  @media(max-width:880px){.brand-logo-img{height:28px}}
+  @media(max-width:360px){header .brand{padding:6px 10px}.brand-logo-img{height:24px}}
   .navlinks{display:flex;gap:26px;align-items:center;font-weight:600;color:#fff}
   .navlinks a:hover{color:var(--sky)}
   .navcta{display:flex;gap:12px;align-items:center}
@@ -395,7 +399,10 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 <header>
   <nav>
     <a class="brand" href="#top" aria-label="Horizon Water Co home">
-      <span class="row"><span class="h">HORIZON</span><span class="w">WATER CO.</span><span class="drop"></span></span>
+      <picture>
+        <source srcset="images/logo.webp" type="image/webp" />
+        <img class="brand-logo-img" src="images/logo-fallback.png" alt="Horizon Water Co" width="851" height="160" />
+      </picture>
     </a>
     <div class="navlinks">
       <a href="#systems">Systems</a>
