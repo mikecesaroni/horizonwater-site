@@ -306,7 +306,14 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .photowall-track img{width:230px;height:290px;object-fit:cover;border-radius:var(--radius-md);box-shadow:0 14px 30px rgba(11,37,69,.16);flex:none}
   @keyframes marquee{to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.photowall-track{animation:none}}
-  @media(max-width:640px){.photowall-track img{width:170px;height:220px}}
+  @media(max-width:640px){
+    .photowall-track img{width:170px;height:220px}
+    .photowall{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;-webkit-mask-image:none;mask-image:none;scrollbar-width:none;-ms-overflow-style:none;padding:2px 22px 10px}
+    .photowall::-webkit-scrollbar{display:none}
+    .photowall-track{animation:none;gap:14px}
+    .photowall-track img{scroll-snap-align:start}
+    .photowall-track img[data-dup]{display:none}
+  }
 
   /* Steps */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
@@ -684,11 +691,11 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
       <img src="images/branded-system.png" alt="Horizon Water Co whole-home system" loading="lazy" decoding="async" />
       <img src="images/ro-branded.png" alt="Horizon Water Co reverse osmosis system" loading="lazy" decoding="async" />
       <img src="images/wholehome.jpg" alt="Horizon Water Co PFAS filtration system" loading="lazy" decoding="async" />
-      <img src="images/job-softener-basement.jpg" alt="Dual-tank water treatment system installed by Horizon Water Co in a Rhode Island basement" loading="lazy" decoding="async" />
-      <img src="images/hero-house.jpg" alt="Horizon Water Co installed system" loading="lazy" decoding="async" />
-      <img src="images/branded-system.png" alt="Horizon Water Co whole-home system" loading="lazy" decoding="async" />
-      <img src="images/ro-branded.png" alt="Horizon Water Co reverse osmosis system" loading="lazy" decoding="async" />
-      <img src="images/wholehome.jpg" alt="Horizon Water Co PFAS filtration system" loading="lazy" decoding="async" />
+      <img src="images/job-softener-basement.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
+      <img src="images/hero-house.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
+      <img src="images/branded-system.png" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
+      <img src="images/ro-branded.png" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
+      <img src="images/wholehome.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
     </div>
   </div>
 </section>
