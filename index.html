@@ -314,6 +314,7 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     .photowall-track img{scroll-snap-align:start}
     .photowall-track img[data-dup]{display:none}
   }
+  .gallery-single{max-width:340px;width:100%;height:auto;margin-top:36px;border-radius:var(--radius-md);box-shadow:0 14px 30px rgba(11,37,69,.16)}
 
   /* Steps */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
@@ -684,19 +685,11 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     <h2>Recent Work Across Rhode Island</h2>
     <p class="sub">A look at the systems we've installed in RI homes.</p>
   </div>
-  <div class="photowall">
-    <div class="photowall-track">
-      <img src="images/job-softener-basement.jpg" alt="Dual-tank water treatment system installed by Horizon Water Co in a Rhode Island basement" loading="lazy" decoding="async" />
-      <img src="images/hero-house.jpg" alt="Horizon Water Co installed system" loading="lazy" decoding="async" />
-      <img src="images/branded-system.png" alt="Horizon Water Co whole-home system" loading="lazy" decoding="async" />
-      <img src="images/ro-branded.png" alt="Horizon Water Co reverse osmosis system" loading="lazy" decoding="async" />
-      <img src="images/wholehome.jpg" alt="Horizon Water Co PFAS filtration system" loading="lazy" decoding="async" />
-      <img src="images/job-softener-basement.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
-      <img src="images/hero-house.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
-      <img src="images/branded-system.png" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
-      <img src="images/ro-branded.png" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
-      <img src="images/wholehome.jpg" alt="" loading="lazy" decoding="async" data-dup aria-hidden="true" />
-    </div>
+  <!-- Single real job photo for now — swap back to .photowall/.photowall-track (see CSS above)
+       once a few more install photos are added, listing each real photo once and duplicating
+       the full set at the end for the marquee loop. -->
+  <div class="wrap center">
+    <img class="gallery-single" src="images/job-softener-basement.jpg" alt="Dual-tank water treatment system installed by Horizon Water Co in a Rhode Island basement" loading="lazy" decoding="async" />
   </div>
 </section>
 
