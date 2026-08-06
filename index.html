@@ -275,6 +275,24 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .band .b p{color:#cfe0f0;font-size:.96rem}
   @media(max-width:880px){.band .grid{grid-template-columns:1fr}}
 
+  /* Systems section — water gradient */
+  #systems{position:relative;background:linear-gradient(165deg,var(--navy) 0%,var(--blue) 55%,var(--sky) 100%);overflow:hidden}
+  #systems:before{content:"";position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(ellipse 60% 45% at 12% -5%,rgba(255,255,255,.16),transparent 60%),
+    radial-gradient(ellipse 55% 40% at 92% 105%,rgba(255,255,255,.12),transparent 60%)}
+  #systems .wrap{position:relative}
+  #systems .eyebrow,#systems .eyebrow:before{color:#bde3fc}
+  #systems .eyebrow:before{background:#bde3fc}
+  #systems h2,#systems .breakout h3{color:#bde3fc}
+  #systems .center .sub,#systems .breakout .sub{color:#eaf6ff}
+  #systems .checklist li{color:#fff}
+  #systems .checklist li:before{color:#8be07a}
+  #systems .spec-box{border-color:rgba(255,255,255,.5);box-shadow:0 10px 26px rgba(6,20,42,.18)}
+  #systems .btn-blue{background:#fff;color:var(--navy);box-shadow:0 6px 16px rgba(6,20,42,.22)}
+  #systems .btn-blue:hover{background:#f2f7fc}
+  #systems .btn-outline{border-color:rgba(255,255,255,.6)}
+  #systems .breakout img{box-shadow:0 22px 46px rgba(6,20,42,.28)}
+
   /* Product breakout sections */
   .breakout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:56px}
   .breakout.reverse .imgcol{order:2}
@@ -494,6 +512,15 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   </div>
 </div>
 
+<div class="wave-divider" style="background:var(--ice)">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <g class="wave-g" fill="var(--navy)">
+      <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"/>
+      <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" transform="translate(1200,0)"/>
+    </g>
+  </svg>
+</div>
+
 <!-- SYSTEMS -->
 <section id="systems">
   <div class="wrap">
@@ -587,6 +614,15 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
   </div>
 </section>
+
+<div class="wave-divider flip" style="background:var(--sky)">
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <g class="wave-g" fill="var(--paper)">
+      <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"/>
+      <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" transform="translate(1200,0)"/>
+    </g>
+  </svg>
+</div>
 
 <!-- QUALITY / TRUST GRID -->
 <section id="quality">
