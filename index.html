@@ -520,11 +520,18 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
 
 <div class="wave-divider wave-text" style="background:var(--ice)">
   <svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <clipPath id="waveTextTile"><rect x="0" y="0" width="1200" height="100"/></clipPath>
+    </defs>
     <g class="wave-g">
       <path fill="var(--navy)" d="M0,30 C150,50 350,10 600,30 C850,50 1050,10 1200,30 L1200,100 L0,100 Z"/>
       <path fill="var(--navy)" d="M0,30 C150,50 350,10 600,30 C850,50 1050,10 1200,30 L1200,100 L0,100 Z" transform="translate(1200,0)"/>
-      <text class="wave-text-label" x="0" y="82" fill="#bde3fc">EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•</text>
-      <text class="wave-text-label" x="1200" y="82" fill="#bde3fc">EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•</text>
+      <g clip-path="url(#waveTextTile)">
+        <text class="wave-text-label" x="0" y="82" textLength="1200" lengthAdjust="spacingAndGlyphs" fill="#bde3fc">EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•</text>
+      </g>
+      <g clip-path="url(#waveTextTile)" transform="translate(1200,0)">
+        <text class="wave-text-label" x="0" y="82" textLength="1200" lengthAdjust="spacingAndGlyphs" fill="#bde3fc">EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•&#160;&#160;EVERY DROP MATTERS&#160;&#160;•</text>
+      </g>
     </g>
   </svg>
 </div>
