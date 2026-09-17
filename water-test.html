@@ -80,7 +80,53 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
   .leadform.submitting .btn{opacity:.7;pointer-events:none}
 
   .footnote{text-align:center;color:#bcd2ec;font-size:.8rem;margin-top:26px}
-  @media(max-width:600px){.hero h1{font-size:1.7rem}}
+
+  /* Layout: the form is the point of this page, so it sits beside the copy on
+     desktop and directly under a compact hero on mobile — never below a scroll. */
+  .layout{display:grid;gap:26px}
+
+  @media(min-width:900px){
+    .wrap{max-width:1080px;padding-top:26px}
+    .layout{
+      grid-template-columns:minmax(0,1fr) 430px;
+      /* Third row is an empty spacer: the form is taller than the copy, and
+         without it the grid stretches the copy rows apart to match. */
+      grid-template-areas:"copy form" "extra form" ".    form";
+      grid-template-rows:auto auto 1fr;
+      align-items:start;gap:22px 44px}
+    .copy{grid-area:copy}
+    .leadform{grid-area:form}
+    .extra{grid-area:extra}
+    .hero{text-align:left;margin:0}
+    .hero p{margin:0}
+    .trustrow{justify-content:flex-start;margin:0}
+    .warncard{margin:18px 0 0;max-width:none}
+    .leadform{margin:0;max-width:430px}
+  }
+
+  @media(max-width:899px){
+    .hero{margin:18px 0 20px}
+    .trustrow{margin:0 auto}
+    .warncard{margin:20px auto 0}
+  }
+
+  @media(max-width:600px){
+    .wrap{padding:14px 16px 44px}
+    .hero{margin:12px 0 14px}
+    .hero h1{font-size:1.42rem;margin-bottom:0}
+    .hero .pill{font-size:.78rem;padding:6px 12px;margin-bottom:9px}
+    /* The promise is repeated in the form subhead and the trust row below it,
+       so on a phone this paragraph only costs the submit button its place. */
+    .hero p{display:none}
+    .layout{gap:16px}
+    .leadform{padding:18px 17px}
+    .leadform h2{font-size:1.22rem}
+    .leadform .small{font-size:.86rem;margin-bottom:11px}
+    .leadform label{margin:7px 0 3px;font-size:.84rem}
+    .leadform input,.leadform select{padding:10px 12px}
+    .btn{margin-top:14px;padding:13px 24px}
+    .disc{margin-top:9px}
+  }
 </style>
 </head>
 <body>
@@ -90,31 +136,18 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     <span class="row"><span class="h">HORIZON</span><span class="w">WATER CO.</span><span class="drop"></span></span>
   </a>
 
-  <div class="hero">
-    <p class="pill">Rhode Island set new PFAS limits in 2024 — is your water safe?</p>
-    <h1>Find Out What's Really in Your Water</h1>
-    <p>We install whole-home water systems across Rhode Island. A free in-home water test and estimate are included with every install, so you know exactly what you're getting before we start.</p>
-  </div>
+  <div class="layout">
 
-  <div class="trustrow">
-    <span>Free test included with install</span>
-    <span>Same-week appointments</span>
-    <span>Lifetime warranty on every system</span>
-  </div>
-
-  <!-- TODO: swap the icon below for a real photo of white mineral residue
-       on a shower head / dishwasher once available — replace the .icon
-       div with an <img> of similar size, same rounded/card treatment. -->
-  <div class="warncard">
-    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/><line x1="12" y1="9" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg></div>
-    <div>
-      <div class="kicker">Warning sign</div>
-      <h2>See white residue on your shower head or dishes?</h2>
-      <p>That's hard mineral buildup — and it's already inside your pipes, water heater, and appliances too.</p>
+  <div class="copy">
+    <div class="hero">
+      <p class="pill">Rhode Island set new PFAS limits in 2024 — is your water safe?</p>
+      <h1>Find Out What's Really in Your Water</h1>
+      <p>We install whole-home water systems across Rhode Island. A free in-home test and estimate come with every install.</p>
     </div>
   </div>
 
-  <form class="leadform" id="water-test-form" name="meta-water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:30px">
+
+  <form class="leadform" id="water-test-form" name="meta-water-test" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="meta-water-test" />
     <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
     <h2>Get Your Installation Estimate</h2>
@@ -152,6 +185,28 @@ src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
     <p class="disc">Or call/text <strong>(401) 999-8222</strong></p>
     <p class="form-msg" id="water-test-msg" role="status" aria-live="polite"></p>
   </form>
+
+  <div class="extra">
+  <div class="trustrow">
+    <span>Free test included with install</span>
+    <span>Same-week appointments</span>
+    <span>Lifetime warranty on every system</span>
+  </div>
+
+  <!-- TODO: swap the icon below for a real photo of white mineral residue
+       on a shower head / dishwasher once available — replace the .icon
+       div with an <img> of similar size, same rounded/card treatment. -->
+  <div class="warncard">
+    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/><line x1="12" y1="9" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg></div>
+    <div>
+      <div class="kicker">Warning sign</div>
+      <h2>See white residue on your shower head or dishes?</h2>
+      <p>That's hard mineral buildup — and it's already inside your pipes, water heater, and appliances too.</p>
+    </div>
+  </div>
+  </div><!-- /.extra -->
+
+  </div><!-- /.layout -->
 
   <p class="footnote">Horizon Water Co &nbsp;|&nbsp; Serving all of Rhode Island &amp; nearby MA &nbsp;|&nbsp; <a href="/privacy.html" style="color:#dcebff;text-decoration:underline">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms.html" style="color:#dcebff;text-decoration:underline">Terms of Service</a></p>
 </div>
