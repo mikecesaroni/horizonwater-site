@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Would Clean Water Cost You? | Horizon Water Co</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+<link rel="icon" href="/images/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Answer 8 quick questions about your water and see what a Horizon Water Co system would cost for your Rhode Island home." />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2530401494062761');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2530401494062761&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+  :root{
+    --navy:#16317a;--blue:#2a6fc4;--sky:#4aa3e6;--ice:#eef4fb;
+    --ink:#13202e;--gray:#5a6b7b;--line:#dfe7ee;--white:#fff;
+    --green:#3aa935;--green-bright:#4caf2f;--red:#c0392b;--amber:#b7791f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:linear-gradient(135deg,var(--navy) 0%,#12407a 55%,var(--blue) 100%);min-height:100vh}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:660px;margin:0 auto;padding:26px 18px 56px}
+
+  .brand{display:flex;justify-content:center;line-height:1}
+  .brand .row{display:flex;align-items:center;gap:7px}
+  .brand .h{color:#fff;font-weight:900;font-size:1.4rem;letter-spacing:-.01em}
+  .brand .w{color:#eaf4fb;font-weight:800;font-size:1.1rem}
+  .brand .drop{width:12px;height:12px;background:var(--sky);border-radius:0 50% 50% 50%;transform:rotate(45deg);display:inline-block}
+
+  /* ---------- Intro ---------- */
+  .hero{text-align:center;color:#fff;margin:26px 0 22px}
+  .hero .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:7px 15px;border-radius:30px;font-weight:700;font-size:.84rem;margin-bottom:15px}
+  .hero h1{font-size:2.05rem;line-height:1.14;margin-bottom:12px}
+  .hero p{font-size:1.06rem;color:#dcebff;max-width:520px;margin:0 auto}
+  .trustrow{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:22px auto 0;color:#dcebff;font-size:.88rem;font-weight:600}
+  .trustrow span{display:flex;align-items:center;gap:6px}
+  .trustrow span:before{content:"\2713";color:var(--green-bright);font-weight:900}
+
+  /* ---------- Card ---------- */
+  .card{background:#fff;border-radius:18px;padding:26px 24px;box-shadow:0 20px 50px rgba(0,0,0,.25);margin-top:24px}
+  @media(max-width:560px){.card{padding:22px 18px}}
+
+  .progress{height:7px;background:var(--ice);border-radius:99px;overflow:hidden;margin-bottom:6px}
+  .progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--sky));border-radius:99px;transition:width .35s ease}
+  .stepnum{font-size:.76rem;font-weight:700;color:var(--gray);letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px}
+
+  .q{font-size:1.32rem;color:var(--navy);line-height:1.28;margin-bottom:5px;font-weight:800}
+  .qsub{color:var(--gray);font-size:.93rem;margin-bottom:17px}
+
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fbfdff;border:2px solid var(--line);border-radius:11px;padding:14px 15px;font-size:1rem;font-family:inherit;color:var(--ink);cursor:pointer;transition:border-color .12s,background .12s;line-height:1.35}
+  .opt:hover{border-color:var(--sky);background:#f4faff}
+  .opt.sel{border-color:var(--blue);background:#eaf4ff}
+  .opt .box{flex:none;width:22px;height:22px;border:2px solid #c3d3e2;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;font-weight:900}
+  .opt.radio .box{border-radius:50%}
+  .opt.sel .box{background:var(--blue);border-color:var(--blue)}
+  .opt.sel .box:after{content:"\2713"}
+
+  .nav{display:flex;gap:10px;align-items:center;margin-top:20px}
+  .btn{flex:1;text-align:center;background:var(--green);color:#fff;font-weight:800;padding:15px 24px;border-radius:10px;font-size:1.04rem;border:0;cursor:pointer;font-family:inherit;transition:transform .12s,box-shadow .12s,opacity .12s;box-shadow:0 6px 16px rgba(58,169,53,.35)}
+  .btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 10px 22px rgba(58,169,53,.5)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+  .btn.blue{background:var(--blue);box-shadow:0 6px 16px rgba(42,111,196,.35)}
+  .btn.blue:hover{box-shadow:0 10px 22px rgba(42,111,196,.5)}
+  .back{flex:none;background:none;border:0;color:var(--gray);font-weight:700;font-size:.92rem;cursor:pointer;font-family:inherit;padding:14px 6px}
+  .back:hover{color:var(--navy)}
+
+  /* ---------- Fact interstitial ---------- */
+  .fact{background:#fff8f4;border-left:4px solid var(--red);border-radius:9px;padding:14px 16px;margin-top:18px}
+  .fact .kicker{color:var(--red);font-weight:800;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
+  .fact p{font-size:.9rem;color:#3d4c5a;line-height:1.5}
+  .fact cite{display:block;font-style:normal;font-size:.76rem;color:var(--gray);margin-top:6px}
+
+  /* ---------- Contact step ---------- */
+  label{display:block;font-weight:700;color:var(--navy);font-size:.86rem;margin:12px 0 5px}
+  input,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit;background:#fbfdff;color:var(--ink)}
+  input:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(42,111,196,.15)}
+  .disc{text-align:center;color:var(--gray);font-size:.78rem;margin-top:12px;line-height:1.5}
+  .disc a{text-decoration:underline}
+  .hp{position:absolute;left:-9999px}
+  .form-msg{display:none;text-align:center;font-weight:700;font-size:.9rem;margin-top:13px;padding:10px 14px;border-radius:8px}
+  .form-msg.show{display:block}
+  .form-msg.err{background:#fdeceb;color:var(--red)}
+
+  /* ---------- Calculating ---------- */
+  .calc{text-align:center;padding:26px 0}
+  .spinner{width:44px;height:44px;border:4px solid var(--ice);border-top-color:var(--blue);border-radius:50%;margin:0 auto 16px;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .calc p{color:var(--gray);font-size:.96rem}
+
+  /* ---------- Results ---------- */
+  .rescrown{text-align:center;margin-bottom:4px}
+  .rescrown .kicker{color:var(--green);font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+  .resname{font-size:1.5rem;color:var(--navy);text-align:center;line-height:1.25;margin:6px 0 10px;font-weight:800}
+  .pricebox{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:14px;padding:22px 18px;text-align:center;margin:16px 0}
+  .pricebox .lab{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:#bcd9f5;font-weight:700}
+  .pricebox .amt{font-size:2.9rem;font-weight:900;line-height:1.05;margin:6px 0 2px;letter-spacing:-.02em}
+  .pricebox .amt small{font-size:1.1rem;font-weight:700;vertical-align:super}
+  .pricebox .sub{font-size:.88rem;color:#dcebff}
+  .pricebox .fin{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.2);font-size:.9rem;color:#eaf4fb}
+
+  .reslist{margin:16px 0}
+  .reslist h3{font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);font-weight:800;margin-bottom:9px}
+  .reslist .item{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+  .reslist .item:last-child{border-bottom:0}
+  .reslist .tick{flex:none;width:20px;height:20px;border-radius:50%;background:#eaf7e9;color:var(--green);font-weight:900;font-size:.72rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .reslist .item b{display:block;color:var(--navy);font-size:.96rem}
+  .reslist .item span{font-size:.88rem;color:var(--gray);line-height:1.45}
+
+  .flagbox{background:var(--ice);border-radius:11px;padding:15px 17px;margin:16px 0}
+  .flagbox h3{color:var(--navy);font-size:.98rem;margin-bottom:8px}
+  .flagbox ul{margin-left:19px}
+  .flagbox li{font-size:.9rem;color:#3d4c5a;margin-bottom:5px;line-height:1.45}
+
+  .footnote{text-align:center;color:#bcd2ec;font-size:.78rem;margin-top:24px;line-height:1.6}
+  .footnote a{text-decoration:underline;color:#dcebff}
+  @media(max-width:600px){.hero h1{font-size:1.66rem}.q{font-size:1.16rem}.pricebox .amt{font-size:2.4rem}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="brand" href="/" aria-label="Horizon Water Co home">
+    <span class="row"><span class="h">HORIZON</span><span class="w">WATER CO.</span><span class="drop"></span></span>
+  </a>
+
+  <!-- ===== INTRO ===== -->
+  <section id="intro">
+    <div class="hero">
+      <p class="pill">10 Rhode Island water systems tested over the EPA's PFAS limit</p>
+      <h1>What Would Clean Water Actually Cost You?</h1>
+      <p>Answer 8 quick questions about your home's water. We'll show you which system you need and what it costs &mdash; no sales call required to see the price.</p>
+    </div>
+    <div class="trustrow">
+      <span>Takes about 60 seconds</span>
+      <span>Real pricing, not a range</span>
+      <span>Free in-home test included</span>
+    </div>
+    <div class="card">
+      <button class="btn" id="startBtn" type="button">Start the Quiz &rarr;</button>
+      <p class="disc">Free water test and estimate included with every install. Serving all of Rhode Island.</p>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ ===== -->
+  <section id="quiz" class="card" style="display:none">
+    <div class="progress"><i id="bar"></i></div>
+    <div class="stepnum" id="stepnum"></div>
+    <div id="qbody"></div>
+    <div class="nav">
+      <button class="back" id="backBtn" type="button">&larr; Back</button>
+      <button class="btn" id="nextBtn" type="button" disabled>Continue</button>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="card" style="display:none">
+    <div class="progress"><i style="width:100%"></i></div>
+    <div class="stepnum">Last step</div>
+    <div class="q">Your results are ready.</div>
+    <p class="qsub">Tell us where to send them and we'll show your price on the next screen.</p>
+
+    <form id="quizForm" name="meta-water-quiz" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="meta-water-quiz" />
+      <p class="hp"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <!-- Netlify needs these declared at build time; filled by JS on submit -->
+      <input type="hidden" name="water_source" /><input type="hidden" name="symptoms" />
+      <input type="hidden" name="taste_smell" /><input type="hidden" name="bottled_water" />
+      <input type="hidden" name="household" /><input type="hidden" name="pfas_tested" />
+      <input type="hidden" name="bathrooms" /><input type="hidden" name="timeline" />
+      <input type="hidden" name="recommendation" /><input type="hidden" name="quoted_price" />
+      <input type="hidden" name="lead_source" /><input type="hidden" name="page_url" />
+
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="First and last name" autocomplete="name" required />
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" placeholder="(401) 555-1234" autocomplete="tel" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
+
+      <label for="town">Town</label>
+      <input id="town" name="town" type="text" placeholder="Cranston, RI" autocomplete="address-level2" required />
+
+      <button type="submit" class="btn" style="width:100%">See My Price &rarr;</button>
+      <p class="disc">By submitting you agree to be contacted by phone, email, or text about your request. See our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.</p>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- ===== CALCULATING ===== -->
+  <section id="calculating" class="card" style="display:none">
+    <div class="calc">
+      <div class="spinner"></div>
+      <p id="calcText">Matching your answers to a system&hellip;</p>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section id="results" class="card" style="display:none">
+    <div class="rescrown"><span class="kicker">Your recommended system</span></div>
+    <h2 class="resname" id="resName"></h2>
+    <div id="resWhy"></div>
+    <div class="pricebox">
+      <div class="lab">Your price</div>
+      <div class="amt" id="resPrice"></div>
+      <div class="sub" id="resPriceSub"></div>
+      <div class="fin" id="resFin"></div>
+    </div>
+    <div class="reslist" id="resIncludes"></div>
+    <div class="flagbox" id="resFlags"></div>
+    <a class="btn blue" id="bookBtn" href="tel:+14019998222" style="display:block;text-decoration:none;padding-top:16px;padding-bottom:16px">Call (401) 999-8222 to Book</a>
+    <p class="disc">We already have your info &mdash; we'll reach out to schedule your free water test. Call if you'd rather not wait.</p>
+  </section>
+
+  <p class="footnote">
+    Horizon Water Co &nbsp;|&nbsp; Serving all of Rhode Island &amp; nearby MA<br />
+    <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms.html">Terms of Service</a>
+  </p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     PRICING  —  the only block you need to edit to change prices.
+     ------------------------------------------------------------
+     complete.price is CONFIRMED at $3,850 (RO + whole-home together).
+
+     ro.price and wholehome.price are NOT SET YET. While either is
+     null, that result shows the confirmed bundle price as the
+     reference point and tells the customer their exact number is
+     confirmed at the free in-home test — so no made-up figure ever
+     goes in front of a customer. Fill in the two numbers below and
+     every quiz path shows a hard price automatically.
+     ============================================================ */
+  var PRICING = {
+    complete: {
+      price: 3850,
+      name: "Complete Home Filtration",
+      tagline: "Whole-home PFAS &amp; carbon filtration + reverse osmosis drinking system",
+      includes: [
+        ["Whole-Home PFAS &amp; Carbon Filtration", "Treats every tap, shower, and appliance in the house"],
+        ["Reverse Osmosis Drinking System", "Under-sink system for the water you drink and cook with"],
+        ["Professional installation", "Licensed, code-compliant, typically done in one visit"],
+        ["Free in-home water test", "We confirm exactly what you're dealing with before we start"]
+      ]
+    },
+    ro: {
+      price: null, /* TODO: set the Reverse Osmosis Drinking System price */
+      name: "Reverse Osmosis Drinking System",
+      tagline: "Under-sink filtration for the water you drink and cook with",
+      includes: [
+        ["Reverse Osmosis Drinking System", "Removes 95&ndash;99%+ of PFAS, lead, and dissolved contaminants"],
+        ["Dedicated drinking water faucet", "Clean water on tap at the kitchen sink"],
+        ["Professional installation", "Licensed, code-compliant, typically done in one visit"],
+        ["Free in-home water test", "We confirm exactly what you're dealing with before we start"]
+      ]
+    },
+    wholehome: {
+      price: null, /* TODO: set the Whole-Home PFAS & Carbon Filtration price */
+      name: "Whole-Home PFAS &amp; Carbon Filtration",
+      tagline: "Treats every tap, shower, and appliance in the house",
+      includes: [
+        ["Whole-Home PFAS &amp; Carbon Filtration", "Protects every fixture, not just the kitchen sink"],
+        ["Scale and buildup protection", "Guards your water heater, dishwasher, and washing machine"],
+        ["Professional installation", "Licensed, code-compliant, typically done in one visit"],
+        ["Free in-home water test", "We confirm exactly what you're dealing with before we start"]
+      ]
+    }
+  };
+
+  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/MAkI6WIFil1zsM8O7t0Y/webhook-trigger/186a4c13-52d5-4f2e-a5d7-4eb21659eb74";
+
+  /* ---------- Questions ----------
+     w = whole-home signal weight, r = drinking/RO signal weight      */
+  var QUESTIONS = [
+    {
+      key: "water_source", type: "radio",
+      q: "Where does your home's water come from?",
+      sub: "This changes what we test for.",
+      opts: [
+        { t: "City / public water", w: 0, r: 0 },
+        { t: "Private well", w: 1, r: 1 },
+        { t: "I'm not sure", w: 0, r: 0 }
+      ],
+      fact: {
+        k: "Worth knowing",
+        p: "Public systems in Rhode Island are now tested for PFAS. Private wells are not covered by any of it &mdash; if you're on a well, nobody is testing your water but you.",
+        c: "RI Department of Health"
+      }
+    },
+    {
+      key: "symptoms", type: "multi",
+      q: "Which of these have you noticed in your home?",
+      sub: "Select everything that sounds familiar.",
+      opts: [
+        { t: "White chalky buildup on faucets, shower heads, or glassware", w: 2, r: 0 },
+        { t: "Dry, itchy skin or dull hair after showering", w: 2, r: 0 },
+        { t: "Soap won't lather; laundry comes out stiff or scratchy", w: 2, r: 0 },
+        { t: "Spots or cloudy film on dishes out of the dishwasher", w: 2, r: 0 },
+        { t: "A water heater or appliance that died earlier than it should have", w: 2, r: 0 },
+        { t: "Dropping water pressure or fixtures that keep clogging", w: 2, r: 0 },
+        { t: "None of these", w: 0, r: 0, solo: true }
+      ],
+      fact: {
+        k: "What that means",
+        p: "Chalky buildup is hard mineral scale. What you can see on a shower head is also coating the inside of your pipes, your water heater's elements, and every appliance that touches water.",
+        c: ""
+      }
+    },
+    {
+      key: "taste_smell", type: "multi",
+      q: "How does your water taste and smell?",
+      sub: "Select everything that applies.",
+      opts: [
+        { t: "Chlorine or \"swimming pool\" smell", w: 1, r: 2 },
+        { t: "Metallic or rusty taste", w: 1, r: 2 },
+        { t: "Rotten egg or sulfur smell", w: 1, r: 2 },
+        { t: "Earthy, musty, or just \"off\"", w: 1, r: 2 },
+        { t: "Tastes fine to me", w: 0, r: 0, solo: true }
+      ],
+      fact: {
+        k: "Worth knowing",
+        p: "Taste and smell only catch a fraction of what's in water. PFAS &mdash; the contaminant Rhode Island regulators are most focused on right now &mdash; has no taste, no smell, and no color at all.",
+        c: ""
+      }
+    },
+    {
+      key: "bottled_water", type: "radio",
+      q: "Do you buy bottled water or use a filter pitcher?",
+      sub: "",
+      opts: [
+        { t: "Yes, regularly", w: 0, r: 2 },
+        { t: "Sometimes", w: 0, r: 1 },
+        { t: "No, we drink straight from the tap", w: 0, r: 0 }
+      ],
+      fact: {
+        k: "Do the math",
+        p: "A household spending $25 a week on bottled water spends about $1,300 a year &mdash; and pitcher filters aren't certified to remove PFAS at all.",
+        c: ""
+      }
+    },
+    {
+      key: "household", type: "multi",
+      q: "Who's drinking the water at home?",
+      sub: "Select everyone in the house.",
+      opts: [
+        { t: "Children under 12", w: 0, r: 2 },
+        { t: "Someone pregnant or nursing", w: 0, r: 2 },
+        { t: "Adults over 65", w: 0, r: 1 },
+        { t: "Pets", w: 0, r: 1 },
+        { t: "Just adults", w: 0, r: 0, solo: true }
+      ],
+      fact: {
+        k: "Why we ask",
+        p: "Children take in more water relative to body weight than adults do, and their bodies are still developing. The EPA and WHO both flag kids as the most vulnerable group for waterborne contaminants.",
+        c: "US EPA"
+      }
+    },
+    {
+      key: "pfas_tested", type: "radio",
+      q: "Has your water ever been tested for PFAS?",
+      sub: "The \"forever chemicals.\"",
+      opts: [
+        { t: "Yes, and it came back with detections", w: 2, r: 3 },
+        { t: "Yes, it came back clean", w: 0, r: 0 },
+        { t: "No, never", w: 1, r: 2 },
+        { t: "I don't know what PFAS is", w: 1, r: 2 }
+      ],
+      fact: {
+        k: "Rhode Island right now",
+        p: "Under the EPA's latest round of national monitoring, 15 Rhode Island utilities reported PFAS in their drinking water and 10 came back above the EPA's 4 parts-per-trillion limit for PFOA and PFOS. Researchers have linked long-term PFAS exposure to kidney and testicular cancer, thyroid disease, and elevated cholesterol.",
+        c: "US EPA UCMR 5 monitoring data; RI Department of Health"
+      }
+    },
+    {
+      key: "bathrooms", type: "radio",
+      q: "How many bathrooms are in your home?",
+      sub: "This sizes the system correctly.",
+      opts: [
+        { t: "1 bathroom", w: 0, r: 0 },
+        { t: "2 bathrooms", w: 0, r: 0 },
+        { t: "3 or more bathrooms", w: 0, r: 0 }
+      ],
+      fact: null
+    },
+    {
+      key: "timeline", type: "radio",
+      q: "If the price works, how soon would you want this done?",
+      sub: "",
+      opts: [
+        { t: "As soon as possible", w: 0, r: 0 },
+        { t: "In the next month or so", w: 0, r: 0 },
+        { t: "Just researching for now", w: 0, r: 0 }
+      ],
+      fact: null
+    }
+  ];
+
+  /* ---------- State ---------- */
+  var idx = 0;
+  var answers = {};           /* key -> array of selected option indexes */
+  var showingFact = false;
+  var $ = function(id){ return document.getElementById(id); };
+
+  function track(name, params){
+    if (typeof fbq === "function") { try { fbq("trackCustom", name, params || {}); } catch(e){} }
+  }
+
+  /* ---------- Rendering ---------- */
+  function render(){
+    var Q = QUESTIONS[idx];
+    var sel = answers[Q.key] || [];
+
+    $("bar").style.width = Math.round((idx / QUESTIONS.length) * 100) + "%";
+    $("stepnum").textContent = "Question " + (idx + 1) + " of " + QUESTIONS.length;
+
+    var html = '<div class="q">' + Q.q + '</div>';
+    if (Q.sub) html += '<p class="qsub">' + Q.sub + '</p>';
+    html += '<div class="opts">';
+    Q.opts.forEach(function(o, i){
+      var on = sel.indexOf(i) !== -1;
+      html += '<button type="button" class="opt ' + (Q.type === "radio" ? "radio " : "") + (on ? "sel" : "") +
+              '" data-i="' + i + '"><span class="box"></span><span>' + o.t + '</span></button>';
+    });
+    html += '</div>';
+
+    if (showingFact && Q.fact) {
+      html += '<div class="fact"><div class="kicker">' + Q.fact.k + '</div><p>' + Q.fact.p + '</p>' +
+              (Q.fact.c ? '<cite>Source: ' + Q.fact.c + '</cite>' : '') + '</div>';
+    }
+
+    $("qbody").innerHTML = html;
+    $("backBtn").style.visibility = idx === 0 ? "hidden" : "visible";
+    $("nextBtn").textContent = (idx === QUESTIONS.length - 1) ? "See My Results" : "Continue";
+    $("nextBtn").disabled = sel.length === 0;
+
+    Array.prototype.forEach.call($("qbody").querySelectorAll(".opt"), function(btn){
+      btn.addEventListener("click", function(){ pick(parseInt(btn.getAttribute("data-i"), 10)); });
+    });
+  }
+
+  function pick(i){
+    var Q = QUESTIONS[idx];
+    var sel = answers[Q.key] || [];
+
+    if (Q.type === "radio") {
+      sel = [i];
+    } else if (Q.opts[i].solo) {
+      sel = [i];                                    /* "None of these" clears the rest */
+    } else {
+      var at = sel.indexOf(i);
+      if (at === -1) sel.push(i); else sel.splice(at, 1);
+      sel = sel.filter(function(n){ return !Q.opts[n].solo; });   /* drop solo if set */
+    }
+
+    answers[Q.key] = sel;
+    if (sel.length && Q.fact) showingFact = true;
+    render();
+  }
+
+  function next(){
+    var Q = QUESTIONS[idx];
+    if (!(answers[Q.key] || []).length) return;
+    track("QuizStep", { step: idx + 1, question: Q.key });
+
+    if (idx === QUESTIONS.length - 1) {
+      $("quiz").style.display = "none";
+      $("contact").style.display = "block";
+      track("QuizCompleted", {});
+      if (typeof fbq === "function") fbq("track", "CompleteRegistration", { content_name: "Water Quiz" });
+      window.scrollTo(0, 0);
+      return;
+    }
+    idx++; showingFact = false; render(); window.scrollTo(0, 0);
+  }
+
+  function back(){
+    if (idx === 0) return;
+    idx--; showingFact = false; render(); window.scrollTo(0, 0);
+  }
+
+  /* ---------- Scoring ---------- */
+  function score(){
+    var w = 0, r = 0;
+    QUESTIONS.forEach(function(Q){
+      (answers[Q.key] || []).forEach(function(i){ w += Q.opts[i].w; r += Q.opts[i].r; });
+    });
+    /* Both sides in play, or nothing clearly pointing one way, gets the
+       complete system — it's the only configuration that covers a house
+       end to end, and the one price we can state outright. */
+    if (w >= 2 && r >= 2) return "complete";
+    if (r >= 2 && w < 2)  return "ro";
+    if (w >= 2 && r < 2)  return "wholehome";
+    return "complete";
+  }
+
+  function labelFor(Q, i){ return Q.opts[i].t.replace(/&mdash;/g, "—").replace(/&ndash;/g, "–").replace(/&amp;/g, "&"); }
+
+  function answerText(key){
+    var Q = null;
+    QUESTIONS.forEach(function(x){ if (x.key === key) Q = x; });
+    if (!Q) return "";
+    return (answers[key] || []).map(function(i){ return labelFor(Q, i); }).join("; ");
+  }
+
+  function money(n){ return "$" + n.toLocaleString("en-US"); }
+
+  /* Everything the customer flagged, played back to them. */
+  function flagsFor(){
+    var out = [];
+    [["symptoms", 6], ["taste_smell", 4]].forEach(function(pair){
+      var Q = null;
+      QUESTIONS.forEach(function(x){ if (x.key === pair[0]) Q = x; });
+      (answers[pair[0]] || []).forEach(function(i){
+        if (!Q.opts[i].solo) out.push(Q.opts[i].t);
+      });
+    });
+    var pf = answers.pfas_tested || [];
+    if (pf.length && (pf[0] === 0 || pf[0] === 2 || pf[0] === 3)) {
+      out.push(pf[0] === 0 ? "PFAS already detected in your water" : "Your water has never been tested for PFAS");
+    }
+    var hh = answers.household || [];
+    var Qhh = null;
+    QUESTIONS.forEach(function(x){ if (x.key === "household") Qhh = x; });
+    hh.forEach(function(i){ if (i === 0 || i === 1) out.push(Qhh.opts[i].t + " in the home"); });
+    return out;
+  }
+
+  /* ---------- Results ---------- */
+  function showResults(){
+    var key = score();
+    var P = PRICING[key];
+
+    $("resName").innerHTML = P.name;
+    $("resWhy").innerHTML = '<p class="qsub" style="text-align:center;margin-bottom:0">' + P.tagline + '</p>';
+
+    if (P.price === null) {
+      /* No confirmed number for this system yet — show the one price we
+         can stand behind and be straight about the rest. */
+      $("resPrice").innerHTML = money(PRICING.complete.price);
+      $("resPriceSub").innerHTML = "Complete Home Filtration, installed &mdash; both systems together";
+      $("resFin").innerHTML = "Your " + P.name + " on its own costs less. We'll confirm your exact number at your free in-home water test.";
+    } else {
+      $("resPrice").innerHTML = money(P.price);
+      $("resPriceSub").innerHTML = "Installed, all in";
+      $("resFin").innerHTML = key === "complete"
+        ? "Both systems, professionally installed. Financing available."
+        : "Professionally installed. Financing available.";
+    }
+
+    var inc = '<h3>What\'s included</h3>';
+    P.includes.forEach(function(it){
+      inc += '<div class="item"><span class="tick">✓</span><div><b>' + it[0] + '</b><span>' + it[1] + '</span></div></div>';
+    });
+    $("resIncludes").innerHTML = inc;
+
+    var flags = flagsFor();
+    if (flags.length) {
+      var f = '<h3>What you told us</h3><ul>';
+      flags.forEach(function(x){ f += '<li>' + x + '</li>'; });
+      f += '</ul>';
+      $("resFlags").innerHTML = f;
+      $("resFlags").style.display = "block";
+    } else {
+      $("resFlags").style.display = "none";
+    }
+
+    $("calculating").style.display = "none";
+    $("results").style.display = "block";
+    window.scrollTo(0, 0);
+    track("QuizResultViewed", { recommendation: P.name.replace(/&amp;/g, "&"), price: P.price });
+  }
+
+  /* ---------- Submit ---------- */
+  function submit(e){
+    e.preventDefault();
+    var form = $("quizForm");
+    var msg = $("formMsg");
+    if (form.classList.contains("submitting")) return;
+    form.classList.add("submitting");
+
+    var key, P, quoted;
+    try {
+      key = score();
+      P = PRICING[key];
+      quoted = P.price === null ? "TBD (" + P.name.replace(/&amp;/g, "&") + ")" : money(P.price);
+    } catch (err) {
+      form.classList.remove("submitting");
+      msg.textContent = "Something went wrong. Please call or text (401) 999-8222 and we'll take care of it.";
+      msg.className = "form-msg show err";
+      return;
+    }
+
+    /* Fill the hidden fields so Netlify records the full quiz. */
+    QUESTIONS.forEach(function(Q){
+      var el = form.querySelector('[name="' + Q.key + '"]');
+      if (el) el.value = answerText(Q.key);
+    });
+    form.querySelector('[name="recommendation"]').value = P.name.replace(/&amp;/g, "&");
+    form.querySelector('[name="quoted_price"]').value = quoted;
+    form.querySelector('[name="lead_source"]').value = "Meta Ads Quiz Lander";
+    form.querySelector('[name="page_url"]').value = window.location.href;
+
+    var data = new FormData(form);
+    var fullName = (data.get("name") || "").trim();
+    var sp = fullName.indexOf(" ");
+
+    var leadEventId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : "lead-" + Date.now() + "-" + Math.random().toString(36).slice(2);
+
+    var ghl = new URLSearchParams();
+    ghl.set("first_name", sp === -1 ? fullName : fullName.slice(0, sp));
+    ghl.set("last_name", sp === -1 ? "" : fullName.slice(sp + 1));
+    ghl.set("full_name", fullName);
+    ghl.set("phone", data.get("phone") || "");
+    ghl.set("email", data.get("email") || "");
+    ghl.set("city", data.get("town") || "");
+    QUESTIONS.forEach(function(Q){ ghl.set(Q.key, answerText(Q.key)); });
+    ghl.set("recommendation", P.name.replace(/&amp;/g, "&"));
+    ghl.set("quoted_price", quoted);
+    ghl.set("lead_source", "Meta Ads Quiz Lander");
+    ghl.set("page_url", window.location.href);
+    ghl.set("fb_event_id", leadEventId);
+
+    fetch(GHL_WEBHOOK_URL, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: ghl.toString()
+    }).catch(function(){});
+
+    var netlify = new URLSearchParams();
+    data.forEach(function(v, k){ netlify.set(k, v); });
+
+    function onDone(){
+      form.classList.remove("submitting");
+      if (typeof fbq === "function") {
+        fbq("track", "Lead", {
+          content_name: P.name.replace(/&amp;/g, "&"),
+          value: P.price === null ? 0 : P.price,
+          currency: "USD"
+        }, { eventID: leadEventId });
+      }
+      $("contact").style.display = "none";
+      $("calculating").style.display = "block";
+      window.scrollTo(0, 0);
+      setTimeout(function(){ $("calcText").textContent = "Pricing your system…"; }, 900);
+      setTimeout(showResults, 1900);
+    }
+
+    /* The lead is already away to GHL, and the ad promised this customer a
+       price. The Netlify record is our backup copy — if it fails we log it
+       and still show the price rather than stranding them on a form. */
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: netlify.toString()
+    }).then(function(res){
+      if (!res.ok) track("QuizNetlifyPostFailed", { status: res.status });
+      onDone();
+    }).catch(function(){
+      track("QuizNetlifyPostFailed", { status: 0 });
+      onDone();
+    });
+  }
+
+  /* ---------- Wire up ---------- */
+  $("startBtn").addEventListener("click", function(){
+    $("intro").style.display = "none";
+    $("quiz").style.display = "block";
+    if (typeof fbq === "function") fbq("track", "ViewContent", { content_name: "Water Quiz" });
+    track("QuizStarted", {});
+    render();
+    window.scrollTo(0, 0);
+  });
+  $("nextBtn").addEventListener("click", next);
+  $("backBtn").addEventListener("click", back);
+  $("quizForm").addEventListener("submit", submit);
+})();
+</script>
+</body>
+</html>
